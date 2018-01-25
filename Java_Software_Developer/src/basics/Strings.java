@@ -28,7 +28,6 @@ public class Strings {
 		
 		System.out.println("There are "+SSN.length()+" digits in your SSN.");
 		
-
 	}
 
 }

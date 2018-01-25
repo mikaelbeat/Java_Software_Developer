@@ -12,7 +12,7 @@ public class FibonnaciApp {
 		// fib(4) = fib(3) + fib(2) --> 2 + 1 = 3
 		// fib(5) = fib(4) + fib(3) --> 3 + 2 = 5
 		
-		System.out.println(fib(4));
+		System.out.println(fib(3));
 		
 		// 1! = 1 * 1
 		// 2! = 2 * 1

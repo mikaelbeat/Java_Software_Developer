@@ -21,8 +21,6 @@ public class Weather {
 			System.out.println("Looks like a cold day. Bring sweater.");
 		}
 		System.out.println("Program ended.");
-		
-
 	}
 
 }

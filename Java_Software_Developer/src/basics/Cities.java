@@ -58,7 +58,6 @@ public class Cities {
 			System.out.println("At the position "+(x+1)+" is "+states[x]);
 		}
 		
-		
 	}
 
 }
