@@ -11,7 +11,6 @@ public class Assignment1_Task3 {
 		calculateMinimun(numbers);
 		calculateAverage(numbers);
 		calculateMaximun(numbers);
-		
 
 	}
 	
@@ -32,7 +31,13 @@ public class Assignment1_Task3 {
 	}
 	
 	static int calculateMaximun(int[] numbers) {
-		System.out.println("Biggest number in array is "+numbers[numbers.length-1]+".\n");
-		return 0;
+		int max = numbers[0];
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] > max) {
+				max = numbers[i];
+			}
+		}
+		System.out.println("Biggest number in array is "+max+".");
+		return max;
 	}
 }

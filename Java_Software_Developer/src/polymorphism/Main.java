@@ -6,10 +6,13 @@ public class Main {
 		
 		Animal a = new Dog();
 		Animal b = new Cat();
+		Animal c = new Animal();
 		
 		a.makeSound();
 		b.makeSound();
+		c.makeSound();
 		
+		System.out.println("");
 		System.out.println("***************************\n");
 		
 		Animal pet[] = new Animal[2];

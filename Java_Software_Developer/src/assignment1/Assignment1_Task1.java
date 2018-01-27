@@ -3,15 +3,18 @@ package assignment1;
 public class Assignment1_Task1 {
 
 	public static void main(String[] args) {
-		
-		int n = 10;
-		
-		System.out.println("Adding 1 to given value "+n+" is "+calculate(n)+".");
+
+		System.out.println(calculate(3));
 
 	}
-	
-	static int calculate(int n){
-		int sum = n + 1;
+
+	public static int calculate(int n) {
+		int sum = 0;
+		for (int i = 1; i <= n; i++) {
+			System.out.print(sum +" + "+i);
+			sum = sum + i;
+			System.out.println(" = "+sum);
+		}
 		return sum;
 	}
 
