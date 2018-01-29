@@ -6,9 +6,9 @@ public class BankAccount {
 	
 	// Static --> Belongs to the CLASS not the OBJECT instance
 	// Final --> Constant, cannot even be overwritten 
-	static final String routingNumber = "888";
-	String name;
-	String ssn;
+	private static final String routingNumber = "888";
+	private String name;
+	private String ssn;
 	String accountType;
 	double balance = 0;
 	
@@ -33,12 +33,36 @@ public class BankAccount {
 		balance+=initDeposit;
 	}
 	
-	void deposit() {
-		
+	public void setName(String name) {
+		this.name = "Mr. "+name;
 	}
 	
-	void withdraw() {
-		
+	public String getName() {
+		return name;
+	}
+	
+	public void setSSN(String ssn) {
+		this.ssn = ssn;
+	}
+	
+	public String getSSN() {
+		return ssn;
+	}
+	
+	
+	void deposit(double amount) {
+		balance+=amount;
+		showActivity("*Deposit* "+amount+"\n");
+	}
+	
+	void withdraw(double amount) {
+		balance-=amount;
+		showActivity("*Withdraw*\n");
+	}
+	
+	private void showActivity(String activity) {
+		System.out.println("Your recent activity: "+activity);
+		System.out.println("Your new balance is: "+balance+"€.");
 	}
 	
 	void checkBalance() {
@@ -47,6 +71,12 @@ public class BankAccount {
 	
 	void getStatus() {
 		
+	}
+	
+	@Override
+	public String toString() {
+		return "Account owner: "+name+", Account number "+accountNumber+", Balance: "+balance+"€ and "
+				+ "Routing number "+routingNumber+".";
 	}
 
 }
