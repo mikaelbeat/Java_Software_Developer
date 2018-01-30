@@ -11,6 +11,10 @@ public class BankAccountApp {
 		System.out.println(account1.getName()+"\n");
 		System.out.println("SSN is: "+account1.getSSN()+"\n");
 		account1.balance = 1000;
+		account1.setRate();
+		account1.increaseRate();
+		
+		// Polymorphism thought overriding
 		System.out.println(account1.toString()+"\n");
 		
 		account1.deposit(500);
@@ -18,6 +22,7 @@ public class BankAccountApp {
 		account1.deposit(500);
 		account1.withdraw(2000);
 		
+		//Polymorphims thought overloading
 //		BankAccount account2 = new BankAccount("Checking account");
 //		account2.accountNumber = "4567";
 //		

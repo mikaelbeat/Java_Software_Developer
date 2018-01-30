@@ -1,6 +1,6 @@
 package oop;
 
-public class BankAccount {
+public class BankAccount implements IRate{
 	
 	String accountNumber;
 	
@@ -49,6 +49,16 @@ public class BankAccount {
 		return ssn;
 	}
 	
+	// Interface methods
+	public void setRate() {
+		System.out.println("Setting rate.\n");
+	}
+	
+	public void increaseRate() {
+		System.out.println("Increasing rate.\n");
+	}
+	
+	// Define methods
 	
 	void deposit(double amount) {
 		balance+=amount;
@@ -57,12 +67,13 @@ public class BankAccount {
 	
 	void withdraw(double amount) {
 		balance-=amount;
-		showActivity("*Withdraw*\n");
+		showActivity("*Withdraw* "+amount+"\n");
 	}
 	
 	private void showActivity(String activity) {
-		System.out.println("Your recent activity: "+activity);
 		System.out.println("Your new balance is: "+balance+"€.");
+		System.out.println("Your recent activity: "+activity);
+		
 	}
 	
 	void checkBalance() {
