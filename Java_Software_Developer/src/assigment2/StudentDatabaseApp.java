@@ -11,9 +11,10 @@ public class StudentDatabaseApp {
 		student1.setState("Uusimaa");
 		
 		student1.checkBalance();
-		student1.pay(744.34);
+		student1.pay(100);
 		
 		student1.enroll("Java Programming");
+		student1.enroll("C++");
 		student1.showCourses();
 		
 		student1.getEmailAddress();

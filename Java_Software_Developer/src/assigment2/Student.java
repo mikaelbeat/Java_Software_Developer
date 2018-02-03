@@ -20,7 +20,8 @@ public class Student implements IAppFunctions{
 	private String city;
 	private String state;
 	
-	private String enrolledCourse;
+	private String enrolledCourse = "";
+	private final static double coursePrice = 50;
 	
 	public Student(String studentName, String SSN) {
 		this.studentName = studentName;
@@ -32,7 +33,7 @@ public class Student implements IAppFunctions{
 	}
 	
 	private void setUserID() {
-		int random = ThreadLocalRandom.current().nextInt(1000,4000+1);
+		int random = ThreadLocalRandom.current().nextInt(1000,9000+1);
 		userID = studentID+""+random+SSN.substring(7,11);
 	}
 	
@@ -54,7 +55,9 @@ public class Student implements IAppFunctions{
 
 	@Override
 	public void enroll(String course) {
-		this.enrolledCourse = course;
+		this.enrolledCourse = this.enrolledCourse + "\n\t" +course;
+		System.out.println("Enrolled to course "+course+" price is "+coursePrice+"€\n");
+		balance -= coursePrice;
 	}
 
 	@Override
@@ -72,7 +75,7 @@ public class Student implements IAppFunctions{
 
 	@Override
 	public String showCourses() {
-		System.out.println("Student "+studentName+" is now enrolled to "+enrolledCourse+" course.\n");
+		System.out.println("Student "+studentName+" is now enrolled to "+enrolledCourse+"\n");
 		return enrolledCourse;
 	}
 	
@@ -81,7 +84,7 @@ public class Student implements IAppFunctions{
 		System.out.println("****** STUDENT CARD ******");
 		return "Student name: "+studentName+"\n"+"SSN: "+SSN+"\n"+"Student ID: "+studentID+"\n"+
 		"User ID: "+userID+"\n"+"Email address: "+emailAddress+"\n"+"Phone number: "+phone+"\n"+
-		"Home city: "+city+"\n"+"State: "+state+"\n"+"Enrolled course: "+enrolledCourse+"\n"+
+		"Home city: "+city+"\n"+"State: "+state+"\n"+"Enrolled courses: "+enrolledCourse+"\n"+
 		"Used school fundins: "+usedFungins+"€\n"+"School funding balance: "+df.format(balance)+"€\n";
 	}
 	
