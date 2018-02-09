@@ -9,7 +9,7 @@ public class Write {
 	public static void main(String[] args) {
 
 		// 1. Define the path that we want to write
-		String filename = "C:\\Users\\Petri\\git\\Java_Software_Developer\\Java_Software_Developer\\src\\files\\write.txt";
+		String filename = "C:\\Users\\Petri\\git\\Java_Software_Developer\\Java_Software_Developer\\src\\files\\Write.txt";
 		String message = "Demo data to be written to file.";
 		
 		// 2. Create the file in Java

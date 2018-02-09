@@ -12,7 +12,7 @@ public class Read {
 		
 		
 		// 1. Define file path that we want to read
-		String filename = "C:\\Users\\Petri\\git\\Java_Software_Developer\\Java_Software_Developer\\src\\files\\read.txt";
+		String filename = "C:\\Users\\Petri\\git\\Java_Software_Developer\\Java_Software_Developer\\src\\files\\Read.txt";
 		String text = null;
 		
 		// 2. Create the file in Java
