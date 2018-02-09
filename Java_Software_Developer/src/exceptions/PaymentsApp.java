@@ -32,12 +32,9 @@ public class PaymentsApp {
 			}
 		} while(!positivePayment);
 		
+		//4. Print confirmation
 		System.out.println("Thank you for payment of "+payment+"€.");
 		
-		
-		
-		
-		//4. Print confirmation
 	}
 
 }
