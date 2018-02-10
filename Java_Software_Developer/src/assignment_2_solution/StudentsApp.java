@@ -1,4 +1,4 @@
-package assignment2_solution;
+package assignment_2_solution;
 
 public class StudentsApp {
 

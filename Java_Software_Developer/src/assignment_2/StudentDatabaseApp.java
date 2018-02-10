@@ -1,4 +1,4 @@
-package assigment2;
+package assignment_2;
 
 public class StudentDatabaseApp {
 

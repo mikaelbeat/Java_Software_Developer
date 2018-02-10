@@ -1,4 +1,4 @@
-package assigment2;
+package assignment_2;
 
 import java.text.DecimalFormat;
 import java.util.concurrent.ThreadLocalRandom;
