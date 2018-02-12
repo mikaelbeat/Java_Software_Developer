@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.swing.plaf.synth.SynthSpinnerUI;
+
 public class PasswordApp {
 	
 	static String filename = "C:\\Users\\Petri\\git\\Java_Software_Developer\\Java_Software_Developer\\src\\assignment_3\\Password.txt";
@@ -17,6 +19,11 @@ public class PasswordApp {
 	static String password = null;
 	static File file = new File(filename);
 	static String[] fileContent = null;
+
+	static boolean upper = false;
+	static boolean lower = false;
+	static boolean hasNumber = false;
+	static boolean hasSpecial = false;
 	
 	
 	public static void main(String[] args) {
@@ -60,9 +67,17 @@ public class PasswordApp {
 			BufferedWriter bw = new BufferedWriter(fw);
 			System.out.print("Enter password to be saved in file: ");
 			password = reader.nextLine();
-				if (password.length() < 6) {
-					System.out.println("Password must be at least 6 characters long, try again.\n");
+			
+			boolean passwordLenght = password.length()>=6;
+			boolean upperCase = !password.equals(password.toLowerCase());
+			boolean lowerCase = !password.equals(password.toUpperCase());
+			boolean hasSpecial = !password.matches("[A-Za-z0-9]*");
+		    boolean hasNumber = !password.matches(".*\\d+.*");  
+			
+				if (!passwordLenght) {
+					System.out.println("Invalid password, it must be at least 6 characters long.\n");
 					writePasswordToFile();
+					
 				} else {
 				bw.write(password);
 				bw.newLine();
