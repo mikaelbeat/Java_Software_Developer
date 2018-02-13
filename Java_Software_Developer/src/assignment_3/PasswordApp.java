@@ -61,14 +61,14 @@ public class PasswordApp {
 	}
 	
 	
-	public static void writePasswordToFile() {
+	public static boolean writePasswordToFile() {
 		try {
 			FileWriter fw = new FileWriter(file, true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			System.out.print("Enter password to be saved in file: ");
 			password = reader.nextLine();
 			
-			boolean passwordLenght = password.length()>=6;
+			boolean passwordLenght = password.length() >= 6;
 			boolean upperCase = !password.equals(password.toLowerCase());
 			boolean lowerCase = !password.equals(password.toUpperCase());
 			boolean hasSpecial = !password.matches("[A-Za-z0-9]*");
@@ -77,7 +77,23 @@ public class PasswordApp {
 				if (!passwordLenght) {
 					System.out.println("Invalid password, it must be at least 6 characters long.\n");
 					writePasswordToFile();
-					
+					return true;
+				} else if (!upperCase) {
+					System.out.println("Invalid password, it must contain at least one UPPERCASE letter.\n");
+					writePasswordToFile();
+					return true;
+				} else if (!lowerCase) {
+					System.out.println("Invalid password, it must contain at least one lowev case letter.\n");
+					writePasswordToFile();
+					return true;
+				} else if (!hasSpecial) {
+					System.out.println("Invalid password, it must contain at least one special character.\n");
+					writePasswordToFile();
+					return true;
+				} else if (hasNumber) {
+					System.out.println("Invalid password, it must contain at least one number.\n");
+					writePasswordToFile();
+					return true;
 				} else {
 				bw.write(password);
 				bw.newLine();
@@ -90,12 +106,16 @@ public class PasswordApp {
 			e.printStackTrace();
 			menu();
 		}
+		return true;
 	}
 	
 	public static void showFileContent() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			String line = br.readLine();
+			if (line == null) {
+				System.out.println("The is no passwords saved in file.\n");
+			}
 			while(line != null) {
 				System.out.println("* "+line+"\n");
 				line = br.readLine();
