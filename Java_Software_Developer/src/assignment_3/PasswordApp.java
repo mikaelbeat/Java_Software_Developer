@@ -150,7 +150,7 @@ public class PasswordApp {
 	}
 }
 
-class passwordLenghtException extends PasswordApp{
+class passwordLenghtException extends Exception{
 	
 	String password;
 	
