@@ -58,8 +58,6 @@ public class Arrays {
 					System.out.print(field + " ");
 				}
 				System.out.println(" ]");
-		}
-		
+		}	
 	}
-
 }
