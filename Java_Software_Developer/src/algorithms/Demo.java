@@ -12,9 +12,8 @@ public class Demo {
 		System.out.println("Found at position: " + pos);
 		
 		// Call the binary search
-		algorithms.Search.binarySearch(sortedNumbers, 59, 0, sortedNumbers.length);
+		int index = algorithms.Search.binarySearch(sortedNumbers, 59, 0, sortedNumbers.length-1);
+		System.out.println("Found at position: " + index);
 	}
 
 }
-
-// 49 - 3,25
