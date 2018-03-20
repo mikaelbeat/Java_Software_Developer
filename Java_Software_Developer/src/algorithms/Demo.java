@@ -14,6 +14,12 @@ public class Demo {
 		// Call the binary search
 		int index = algorithms.Search.binarySearch(sortedNumbers, 59, 0, sortedNumbers.length-1);
 		System.out.println("Found at position: " + index);
+		
+		// Call the bubbleStort function
+		
+		Sort.bubbleSort(numbers);
+		
+		
 	}
 
 }
